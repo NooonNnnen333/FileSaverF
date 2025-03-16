@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace FileSaver;
+namespace lab3;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

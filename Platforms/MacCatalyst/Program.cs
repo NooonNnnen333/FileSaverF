@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace FileSaver;
+namespace lab3;
 
 public class Program
 {

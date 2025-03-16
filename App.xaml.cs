@@ -1,4 +1,4 @@
-﻿namespace FileSaver;
+﻿namespace lab3;
 
 public partial class App : Application
 {

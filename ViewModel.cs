@@ -5,54 +5,107 @@ using AngleSharp;
 using CommunityToolkit.Maui.Storage;
 using CommunityToolkit.Mvvm.Input;
 
-namespace FileSaver;
+namespace lab3;
+
+public enum ShapeType
+{
+    Point = 1,
+    Line = 2,
+    Rectangle = 3,
+    Ellipse = 4
+}
+
+public class Shape
+{
+    public ShapeType Type { get; set; }
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+public class Graphics : GraphicsView, IDrawable
+{
+    public List<Shape> ShapesE { get; } = new();
+
+    public Graphics()
+    {
+        Drawable = this;
+    }
+
+    public void Draw(ICanvas canvas, RectF dirtyRect)
+    {
+        canvas.StrokeColor = Colors.Red;
+        canvas.StrokeSize = 4;
+
+        foreach (var shape in ShapesE)
+        {
+            switch (shape.Type)
+            {
+                case ShapeType.Point:
+                    canvas.FillCircle(shape.X, shape.X, 5);
+                    break;
+                case ShapeType.Line:
+                    canvas.DrawLine(shape.X, shape.Y, shape.X + 50, shape.Y + 50);
+                    break;
+                case ShapeType.Rectangle:
+                    canvas.DrawRectangle(shape.X, shape.Y, 100, 60);
+                    break;
+                case ShapeType.Ellipse:
+                    canvas.DrawEllipse(shape.X, shape.Y, 100, 60);
+                    break;
+            }
+        }
+    }
+
+    // Храним фигуры
+    public List<Shape> Shapes { get; } = new();
+
+    // Метод добавления фигуры и перерисовка
+    public void AddShape(ShapeType type, int x, int y)
+    {
+        ShapesE.Add(new Shape { Type = type, X = x, Y = y });
+        Invalidate();
+    }
+}
+
+//================================================================================================================================================================    
+
+
 
 public partial class ViewModel : ObservableObject
 {
-    private readonly IFileSaver fileSaver;
-    private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+    private readonly Graphics _graphics;
 
-    public ViewModel(IFileSaver fileSaver)
+    [ObservableProperty] private int x;
+    [ObservableProperty] private int y;
+
+    public ViewModel(Graphics graphics)
     {
-        this.fileSaver = fileSaver;
-        SaveFileCommand = new RelayCommand(async () => await SaveFileAsync());
+        _graphics = graphics;
+        X = 0;
+        Y = 0;
     }
 
-    public ICommand SaveFileCommand { get; }
-
-    private async Task SaveFileAsync()
-    {
-        using var stream = new MemoryStream(Encoding.Default.GetBytes("Смерть евреям, слава Фюреру"));
-        await fileSaver.SaveAsync("HitlerFile.txt", stream, cancellationTokenSource.Token);
-    }
-    
     [RelayCommand]
-    private async Task nnn()
+    public void CreateTochka()
     {
-        // URL для парсинга
-        string url = "https://www.susu.ru";
-
-        // Конфигурация AngleSharp
-        var config = Configuration.Default.WithDefaultLoader();
-
-        // Загрузка страницы
-        var context = BrowsingContext.New(config);
-        var document = await context.OpenAsync(url);
-
-        // Извлечение текста страницы
-        PageText = document.Body.TextContent;
-
-        
-
+        _graphics.AddShape(ShapeType.Point, X, Y);
     }
 
-    [ObservableProperty] 
-    public string pageText;
+    [RelayCommand]
+    public void CreateLiniya()
+    {
+        _graphics.AddShape(ShapeType.Line, X, Y);
+    }
 
+    [RelayCommand]
+    public void CreateKvadrat()
+    {
+        _graphics.AddShape(ShapeType.Rectangle, X, Y);
+    }
 
-
-
-
-
-
+    [RelayCommand]
+    public void CreateEllips()
+    {
+        _graphics.AddShape(ShapeType.Ellipse, X, Y);
+    }
 }

@@ -2,7 +2,7 @@
 using CommunityToolkit.Maui.Storage;
 using Microsoft.Extensions.Logging;
 
-namespace FileSaver;
+namespace lab3;
 
 public static class MauiProgram
 {

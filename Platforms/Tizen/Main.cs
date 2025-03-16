@@ -2,7 +2,7 @@ using System;
 using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 
-namespace FileSaver;
+namespace lab3;
 
 class Program : MauiApplication
 {

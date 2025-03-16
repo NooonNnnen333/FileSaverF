@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace FileSaver;
+namespace lab3;
 
 [Application]
 public class MainApplication : MauiApplication

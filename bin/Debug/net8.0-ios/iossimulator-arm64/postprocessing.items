@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <_PostProcessingItem Include="FileSaver.app/FileSaver">
+    <_PostProcessingItem Include="lab3.app/lab3">
       <IsAppExtension>false</IsAppExtension>
-      <BCSymbolMapName>FileSaver.bcsymbolmap</BCSymbolMapName>
+      <BCSymbolMapName>lab3.bcsymbolmap</BCSymbolMapName>
       <NoDSymUtil>true</NoDSymUtil>
       <dSYMSourcePathExists>false</dSYMSourcePathExists>
       <NoSymbolStrip>true</NoSymbolStrip>
-      <dSYMInfoPlistRelativePath>FileSaver.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
-      <SymbolFile>/Users/egorvasilev/RiderProjects/MauiApp1/FileSaver/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
-      <DSymName>FileSaver.app.dSYM</DSymName>
-      <SourceProjectPath>/Users/egorvasilev/RiderProjects/MauiApp1/FileSaver</SourceProjectPath>
+      <dSYMInfoPlistRelativePath>lab3.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/egorvasilev/RiderProjects/Grafic/FileSaverF/obj/Debug/net8.0-ios/iossimulator-arm64/mtouch-symbols.list</SymbolFile>
+      <DSymName>lab3.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/egorvasilev/RiderProjects/Grafic/FileSaverF</SourceProjectPath>
       <IsXPCService></IsXPCService>
     </_PostProcessingItem>
   </ItemGroup>
