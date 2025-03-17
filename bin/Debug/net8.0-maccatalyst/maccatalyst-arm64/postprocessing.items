@@ -8,9 +8,9 @@
       <dSYMSourcePathExists>false</dSYMSourcePathExists>
       <NoSymbolStrip>true</NoSymbolStrip>
       <dSYMInfoPlistRelativePath>lab3.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
-      <SymbolFile>/Users/egorvasilev/RiderProjects/Grafic/FileSaver/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/mtouch-symbols.list</SymbolFile>
+      <SymbolFile>/Users/egorvasilev/RiderProjects/Grafic/lab4/obj/Debug/net8.0-maccatalyst/maccatalyst-arm64/mtouch-symbols.list</SymbolFile>
       <DSymName>lab3.app.dSYM</DSymName>
-      <SourceProjectPath>/Users/egorvasilev/RiderProjects/Grafic/FileSaver</SourceProjectPath>
+      <SourceProjectPath>/Users/egorvasilev/RiderProjects/Grafic/lab4</SourceProjectPath>
       <IsXPCService></IsXPCService>
     </_PostProcessingItem>
   </ItemGroup>

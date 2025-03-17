@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pd06tYd2gGM=",
+  "dgSpecHash": "c0bqeIyfdMs=",
   "success": true,
-  "projectFilePath": "/Users/egorvasilev/RiderProjects/Grafic/FileSaver/lab3.csproj",
+  "projectFilePath": "/Users/egorvasilev/RiderProjects/Grafic/lab4/lab3.csproj",
   "expectedPackageFiles": [
     "/Users/egorvasilev/.nuget/packages/anglesharp/1.1.2/anglesharp.1.1.2.nupkg.sha512",
     "/Users/egorvasilev/.nuget/packages/communitytoolkit.maui/9.1.1/communitytoolkit.maui.9.1.1.nupkg.sha512",
